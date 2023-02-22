@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.get('/test', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from /test Node!';
+  const msg = 'Hello from Primus Learning and from /test Node!';
   res.send(getPage(msg));
 });
 

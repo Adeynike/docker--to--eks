@@ -33,7 +33,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: node-app
-        IMAGE_TAG: latest
+        IMAGE_TAG: git rev-parse --short "$GITHUB_SHA"
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG

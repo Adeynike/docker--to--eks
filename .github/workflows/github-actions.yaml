@@ -47,7 +47,8 @@ jobs:
     #   run: |
     #     envsubst < deployment.yaml | kubectl apply -f -
     #     kubectl apply -f service.yaml
-
+    
+    
     - name: Deploy to EKS
       uses: swdotcom/update-and-apply-kubernetes-configs@v1
       with:

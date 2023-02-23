@@ -45,6 +45,6 @@ jobs:
       env:
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        envsubst < deployment.yaml | kubectl apply -f 
+        envsubst < deployment.yaml | kubectl apply -f -
         kubectl apply -f service.yaml
 

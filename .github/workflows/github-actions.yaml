@@ -33,7 +33,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: node-app
-        IMAGE_TAG: echo ${GITHUB_SHA::7}
+        IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
@@ -43,7 +43,7 @@ jobs:
     
     - name: Deploy to EKS
       env:
-        IMAGE_TAG: echo ${GITHUB_SHA::7}
+        IMAGE_TAG: ${{ github.sha }}
       run: |
         envsubst < deployment.yaml | kubectl apply -f 
         kubectl apply -f service.yaml

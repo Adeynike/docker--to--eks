@@ -12,14 +12,14 @@ const express = require('express');
 const PORT = 8080;
 const HOST = '0.0.0.0';
 const OS = require('os');
-const ENV = 'DEV';
+const ENV = 'STAGE';
 
 
 // App
 const app = express();
 app.get('/', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from node 2 and node three!';
+  const msg = 'Hello from Primus Learning!';
   res.send(getPage(msg));
 });
 

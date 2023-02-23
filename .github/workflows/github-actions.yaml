@@ -39,9 +39,7 @@ jobs:
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
     - name: Update kube config
-      run: | 
-        aws eks update-kubeconfig --name primuslearning
-        kubectl get nodes
+      run: aws eks update-kubeconfig --name primuslearning
     
     # - name: Deploy to EKS
     #   env:

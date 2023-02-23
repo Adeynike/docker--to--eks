@@ -43,7 +43,7 @@ jobs:
     
     - name: Deploy to EKS
       env:
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: ${{ github.sha::7 }}
       run: |
         envsubst < deployment.yaml | kubectl apply -f 
         kubectl apply -f service.yaml

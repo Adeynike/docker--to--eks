@@ -19,7 +19,7 @@ const ENV = 'STAGE';
 const app = express();
 app.get('/', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from Primus Learning, this is the second demo!';
+  const msg = 'Primus Learning is your institution of choice, reach out to us at contact@primuslearning.org for all devops and aws training!';
   res.send(getPage(msg));
 });
 

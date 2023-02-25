@@ -19,7 +19,7 @@ const ENV = 'STAGE';
 const app = express();
 app.get('/', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from Primus Learning!';
+  const msg = 'Hello from Primus Learning, this is the second demo!';
   res.send(getPage(msg));
 });
 
